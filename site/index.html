@@ -191,5 +191,63 @@
       <div class="ft-meta"><a href="mailto:luca@raml.ch">luca@raml.ch</a> <span class="dot-divider" aria-hidden="true">&middot;</span> <a href="https://www.raml.ch/">www.raml.ch</a></div>
     </div>
   </footer>
+  <script>
+    const samePageLinks = document.querySelectorAll('a[href^="#"]');
+
+    function getScrollOffset() {
+      if (window.matchMedia("(max-width: 640px)").matches) {
+        return 0;
+      }
+
+      const header = document.querySelector(".site-header");
+      return header ? header.getBoundingClientRect().height : 0;
+    }
+
+    function scrollToHash(hash, updateHistory = true) {
+      if (!hash || hash === "#") {
+        return;
+      }
+
+      const target = document.querySelector(hash);
+      if (!target) {
+        return;
+      }
+
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const top = Math.max(0, window.scrollY + target.getBoundingClientRect().top - getScrollOffset());
+
+      window.scrollTo({
+        top,
+        behavior: prefersReducedMotion ? "auto" : "smooth"
+      });
+
+      if (updateHistory) {
+        window.history.pushState(null, "", hash);
+      }
+    }
+
+    samePageLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const hash = link.getAttribute("href");
+        if (!hash || hash === "#") {
+          return;
+        }
+
+        const target = document.querySelector(hash);
+        if (!target) {
+          return;
+        }
+
+        event.preventDefault();
+        scrollToHash(hash);
+      });
+    });
+
+    window.addEventListener("load", () => {
+      if (window.location.hash) {
+        scrollToHash(window.location.hash, false);
+      }
+    });
+  </script>
 </body>
 </html>

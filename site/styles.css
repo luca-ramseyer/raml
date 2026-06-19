@@ -42,10 +42,6 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
   background: var(--paper);
@@ -490,10 +486,6 @@ h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-
   * {
     transition: none !important;
   }

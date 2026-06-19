@@ -401,12 +401,22 @@ h3 {
   font-size: 18px;
 }
 
+.credentials-groups {
+  display: grid;
+  gap: var(--s4);
+  max-width: 52rem;
+}
+
+.credentials-group__title {
+  font-size: 18px;
+  margin-bottom: var(--s2);
+}
+
 .credentials-list {
   list-style: none;
   padding: 0;
   display: grid;
   gap: var(--s2);
-  max-width: 52rem;
 }
 
 .credentials-list li {
@@ -664,6 +674,14 @@ h3 {
   .credentials-list li {
     font-size: 16px;
     padding-left: 16px;
+  }
+
+  .credentials-groups {
+    gap: var(--s3);
+  }
+
+  .credentials-group__title {
+    font-size: 17px;
   }
 
   .wm {

@@ -537,9 +537,15 @@ h3 {
 
   .site-header__inner {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: var(--s2);
     padding: var(--s2) 0 var(--s3);
+  }
+
+  .brand-link {
+    width: 100%;
+    text-align: center;
+    padding-bottom: var(--s1);
   }
 
   .contact__head {
@@ -550,25 +556,32 @@ h3 {
 
   .site-nav {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px var(--s2);
-    padding: var(--s2);
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: var(--radius-ui);
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding: 0 0 2px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .site-nav::-webkit-scrollbar {
+    display: none;
   }
 
   .site-nav a {
-    min-height: 42px;
+    min-height: 38px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0 var(--s1);
+    padding: 0 14px;
     text-align: center;
-    background: var(--paper);
+    white-space: nowrap;
+    background: var(--surface);
     border: 1px solid var(--line);
     border-radius: var(--radius-ui);
+    flex: 0 0 auto;
   }
 
   .experience-group__header {
@@ -694,11 +707,11 @@ h3 {
 
   .site-nav {
     gap: 8px;
-    padding: 12px;
   }
 
   .site-nav a {
     min-height: 40px;
+    padding: 0 12px;
   }
 
   .experience-group__logo {

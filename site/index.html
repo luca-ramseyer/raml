@@ -105,14 +105,14 @@
               <h3>CatKai App</h3>
               <p>Mobile app for cat breeders combining cat management, litter tracking, and genetic phenotype calculation.</p>
             </div>
-            <p>Private project</p>
+            <p class="work-item__meta">Private project</p>
           </article>
           <article class="work-item">
             <div>
               <h3>AbiTaxi Dispatch</h3>
               <p>Dispatch platform for AbiTaxi designed to coordinate drivers clearly and efficiently.</p>
             </div>
-            <p>Private project</p>
+            <p class="work-item__meta">Private project</p>
           </article>
         </div>
       </div>
@@ -209,6 +209,14 @@
   <script>
     const samePageLinks = document.querySelectorAll('a[href^="#"]');
 
+    function getHashTarget(hash) {
+      if (!hash || hash === "#") {
+        return null;
+      }
+
+      return document.getElementById(decodeURIComponent(hash.slice(1)));
+    }
+
     function getScrollOffset() {
       if (window.matchMedia("(max-width: 640px)").matches) {
         return 0;
@@ -219,11 +227,7 @@
     }
 
     function scrollToHash(hash, updateHistory = true) {
-      if (!hash || hash === "#") {
-        return;
-      }
-
-      const target = document.querySelector(hash);
+      const target = getHashTarget(hash);
       if (!target) {
         return;
       }
@@ -239,16 +243,17 @@
       if (updateHistory) {
         window.history.pushState(null, "", hash);
       }
+
+      if (!target.hasAttribute("tabindex")) {
+        target.setAttribute("tabindex", "-1");
+      }
+      target.focus({ preventScroll: true });
     }
 
     samePageLinks.forEach((link) => {
       link.addEventListener("click", (event) => {
         const hash = link.getAttribute("href");
-        if (!hash || hash === "#") {
-          return;
-        }
-
-        const target = document.querySelector(hash);
+        const target = getHashTarget(hash);
         if (!target) {
           return;
         }

@@ -339,7 +339,7 @@ h3 {
   margin-top: var(--s1);
 }
 
-.work-item > p:last-child {
+.work-item__meta {
   color: var(--muted);
   font-size: var(--text-small);
   letter-spacing: 0.04em;

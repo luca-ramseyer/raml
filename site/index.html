@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Luca Ramseyer | Systems, Cybersecurity, Software</title>
-  <meta name="description" content="Portfolio and CV homepage for Luca Ramseyer covering systems, cybersecurity, and software, including Raml KQL, a privacy-first, open-source alternative to a Defender multi-tenant organization for running KQL across many Azure Log Analytics workspaces and tenants.">
+  <meta name="description" content="Portfolio and CV homepage for Luca Ramseyer covering systems, cybersecurity, and software, including Raml KQL, a privacy-first, open-source app that brings multi-tenant KQL querying across Azure Log Analytics workspaces to teams without a Defender multi-tenant organization.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://www.raml.ch/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -88,7 +88,7 @@
         </div>
         <div class="reading-column">
           <p>I work in the Security Operations Center, where I focus on incident response and day-to-day security operations. I also build automation with Azure Functions and Logic Apps to streamline recurring processes and remove unnecessary manual work.</p>
-          <p>Outside of daily operations, I build open-source tooling for analysts. My most recent project is <a href="https://kql.raml.ch/">Raml KQL</a>, a privacy-first desktop app that runs any KQL query against as many Log Analytics and Microsoft Sentinel workspaces and tenants as you need, without a Defender multi-tenant organization.</p>
+          <p>Outside of daily operations, I build open-source tooling for analysts. My most recent project is <a href="https://kql.raml.ch/">Raml KQL</a>, a privacy-first desktop app that runs any KQL query against as many Log Analytics and Microsoft Sentinel workspaces and tenants as you need. It gets as close as possible to querying in a Defender multi-tenant organization, without needing one.</p>
           <p>I care about efficiency, practical value, and using technology in ways that save time for everyone involved.</p>
         </div>
       </div>
@@ -127,7 +127,7 @@
           <article class="work-item">
             <div>
               <h3>Raml KQL</h3>
-              <p>A privacy-first alternative to a Microsoft Defender multi-tenant organization (MTO). Raml KQL is an open-source desktop app that runs any KQL query against as many Azure Log Analytics and Microsoft Sentinel workspaces as you choose, across Entra tenants and signed-in accounts, and merges the results with the tenant and workspace on every row.</p>
+              <p>Multi-tenant KQL querying, as close to a Microsoft Defender multi-tenant organization (MTO) as it gets, without needing one. Raml KQL is an open-source desktop app that runs any KQL query against as many Azure Log Analytics and Microsoft Sentinel workspaces as you choose, across Entra tenants and signed-in accounts, and merges the results with the tenant and workspace on every row. If your organization already has an MTO, use it; Raml KQL is for the teams that don&rsquo;t.</p>
               <p>Privacy and least privilege are built in, not bolted on. There is no telemetry and no Raml KQL server: queries go straight from your machine to Microsoft with your own delegated permissions, and the app holds no secrets or service principals. Results stay in memory or in an encrypted session cache that is destroyed when the app closes. Extensions are sandboxed and must ask before they get any permission, including network access, and every permission can be revoked. Crash reports are never sent without your consent, and tenant names are aliased on screen so screen sharing stays safe.</p>
               <p>Around that sits a VS Code-style editor with schema-aware IntelliSense, charts and exports, and shareable query packs.</p>
             </div>

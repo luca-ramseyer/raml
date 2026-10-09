@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Luca Ramseyer | Systems, Cybersecurity, Software</title>
-  <meta name="description" content="Portfolio and CV homepage for Luca Ramseyer covering systems, cybersecurity, and software.">
+  <meta name="description" content="Portfolio and CV homepage for Luca Ramseyer covering systems, cybersecurity, and software, including Raml KQL, an open-source app for running KQL across many Azure Log Analytics workspaces and tenants.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://www.raml.ch/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,6 +40,7 @@
       "email": "mailto:luca@raml.ch",
       "jobTitle": "Cyber Defense Analyst",
       "description": "Security operations, systems, and software with a focus on efficient systems and useful automation.",
+      "knowsAbout": ["Security operations", "Incident response", "KQL", "Microsoft Sentinel", "Azure"],
       "sameAs": [
         "https://www.linkedin.com/in/luca-ramseyer/",
         "https://github.com/luca-ramseyer"
@@ -87,6 +88,7 @@
         </div>
         <div class="reading-column">
           <p>I work in the Security Operations Center, where I focus on incident response and day-to-day security operations. I also build automation with Azure Functions and Logic Apps to streamline recurring processes and remove unnecessary manual work.</p>
+          <p>Outside of daily operations, I build open-source tooling for analysts. My most recent project is <a href="https://kql.raml.ch/">Raml KQL</a>, a desktop app that runs one KQL query across many Log Analytics and Microsoft Sentinel workspaces in many tenants at once.</p>
           <p>I care about efficiency, practical value, and using technology in ways that save time for everyone involved.</p>
         </div>
       </div>
@@ -109,7 +111,7 @@
           </article>
           <article class="card" role="listitem">
             <h3>Software</h3>
-            <p>Building practical software and automation with Azure Functions and Logic Apps to save time and improve consistency.</p>
+            <p>Building practical software and automation, from Azure Functions and Logic Apps to open-source desktop tools like Raml KQL, to save time and improve consistency.</p>
           </article>
         </div>
       </div>
@@ -122,6 +124,14 @@
           <h2>A small set of representative projects.</h2>
         </div>
         <div class="stack">
+          <article class="work-item">
+            <div>
+              <h3>Raml KQL</h3>
+              <p>Open-source desktop app that runs one KQL query against many Azure Log Analytics and Microsoft Sentinel workspaces, across many Entra tenants and signed-in accounts, and returns one merged result with the tenant and workspace on every row.</p>
+              <p>Built for analysts who work across customer tenants without a Defender multi-tenant organization. It has a VS Code-style editor with schema-aware IntelliSense, charts and exports, shareable query packs, and sandboxed extensions. Tenant names are aliased on screen for safe screen sharing. There is no telemetry: queries go straight to Microsoft with the analyst&rsquo;s own identity.</p>
+            </div>
+            <p class="work-item__meta">Open source, MIT<br>macOS, Windows, Linux<br><a href="https://kql.raml.ch/">kql.raml.ch</a><br><a href="https://github.com/luca-ramseyer/raml-kql">GitHub repository</a></p>
+          </article>
           <article class="work-item">
             <div>
               <h3>CatKai App</h3>
